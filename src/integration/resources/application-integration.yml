@@ -3,7 +3,7 @@ spring:
     active: integration
   data:
     mongodb:
-      database: tickets
-      username: root
-      password: example
+      database: receiver-coupons
+      username: admin
+      password: admin
       host: localhost

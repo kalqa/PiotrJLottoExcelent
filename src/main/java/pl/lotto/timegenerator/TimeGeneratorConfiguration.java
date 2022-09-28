@@ -15,8 +15,8 @@ public class TimeGeneratorConfiguration {
     }
 
     @Bean("timeGeneratorFacade")
-    @Profile("production")
-    public TimeGeneratorFacade createForProduction(@Qualifier("utcClock") Clock clock, TimeConfigurable timeSpec) {
+    @Profile("integration")
+    public TimeGeneratorFacade createForProduction(Clock clock, TimeConfigurable timeSpec) {
         ExpirationDateTimeGenerator expirationDateTimeGenerator = new ExpirationDateTimeGenerator(timeSpec.getExpirationInDays());
         CurrentDateTimeGenerator currentDateTimeGenerator = new CurrentDateTimeGenerator(clock);
         DrawDateTimeGenerator drawDateTimeGenerator = new DrawDateTimeGenerator(timeSpec.getDrawDayOfWeek(), timeSpec.getDrawHour());

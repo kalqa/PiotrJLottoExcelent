@@ -27,7 +27,7 @@ services:
       ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/  # mongodb://{mongo-image-username}:{mongo-image-password}@{mongo-image-name}:{port}
 
  # Redis cache service
-  redis-cache:
+  redissss:
     image: redis:latest
     restart: always
     ports:
@@ -36,14 +36,14 @@ services:
     volumes:
       - redis-cache:/data
 
- # redis-commander:
- #   container_name: redis-commander
- #   image: rediscommander/redis-commander:latest
- #   restart: always
- #   environment:
- #     - REDIS_HOSTS=local:redis-cache:6379
- #   ports:
- #     - "8081:8081"
+  redis-commander:
+    container_name: redis-commander
+    image: rediscommander/redis-commander:latest
+    restart: always
+    environment:
+      - REDIS_HOSTS=local:redissss:6379
+    ports:
+      - "8082:8081"
 
 volumes:
   redis-cache:

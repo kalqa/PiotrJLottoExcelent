@@ -7,7 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 import java.time.*;
 
 @Configuration
-@PropertySource(value = "classpath:/application-${spring.profiles.active}.yml")
+//@PropertySource(value = "classpath:/application-${spring.profiles.active}.yml")
 @ConfigurationProperties(prefix = "lotto.time")
 class TimePropertyConfig implements TimeConfigurable {
 

@@ -1,6 +1,7 @@
-package pl.lotto;
+package pl.lotto.feature;
 
 import org.junit.jupiter.api.Test;
+import pl.lotto.BaseIntegrationSpec;
 import pl.lotto.numberreceiver.dto.ReceiverDto;
 
 import java.time.LocalDateTime;
